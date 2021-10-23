@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- <script src="prueba.js"></script> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burro Africano</title>
+    <script src="https://kit.fontawesome.com/3e24c91c8f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/roll_assignment.css">
+    <link rel="icon" href="/static/img/logo.ico">
+</head>
+    
+<body>
+    <header>
+        <img class="logo" src="/static/img/logo.png" alt="Logo" >
+        <div class="inputBuscar">
+            <form action="/resultadobusqueda" method="post" name="formbusqueda2">
+            <input  type="text" id="search" name="search" placeholder="Buscar personas...">
+            <!-- <label for="buscar"><i class="fas fa-search"></i>buscar</label> -->
+            <input type="submit" value="Buscar" id="buscar">
+            </form>
+        </div>
+        
+      
+        <div class="link">    
+            <a class="button" href="/fronpage" > 
+                <i class="fas fa-home"></i>
+            </a>
+            <a class="button" href="/send" id="mensajes"> 
+                <i class="fas fa-sms"></i>
+            </a>
+            <a href="/cerrarsesion" class="button" id="salir"><i class="fas fa-sign-out-alt"></i></a>
+            </a>
+        </div>   
+
+        <div class="info">
+             <div class="perfilImg">
+                <strong>
+                <a href='/perfil'>{{usuarioperfil}}</a>
+                <label class="user" for="Range">{{rolperfil}}</label>
+                 </strong>
+            </div>
+        </div>
+
+         <input type="image" src="/static/imagenes_usuario/{{foto}}" alt="profile photo"  class="image"  >
+        
+    </header>
+    <article>
+        <div onload="contac()" id="padreCont" class="left">
+            <form action="/cambiarrol/{{id}}/{{rol}}" method="post" name="formcambiarrol">
+            <label class="user_type" for="">Usuario:</label>
+            <input type="text" name="usuario" id="usuario" class="user_type" value={{usuario}} readonly>
+            <label class="user_type" for="">E-Mail:</label>
+            <input type="email" name="email" id="email" class="user_type" value={{email}} readonly>
+            <fieldset>
+                <legend>Tipo de Roll</legend>
+                <input type="radio" name="rol" id="rol" value="usuario" class="radio"> Usuario<br><br>
+                <input type="radio" name="rol" id="rol" value="administrador" class="radio"> Administrador<br><br>
+                <input type="radio" name="rol" id="rol" value="superadministrador" class="radio"> Superadministrador<br>
+            </fieldset>
+            <center>
+                <button class="save">Guardar</button>
+            </center>
+        </form>
+        </div>
+    </article>
+    <form id="busqueda" action="/buscar" method="post"></form>
+</body>
+</html>

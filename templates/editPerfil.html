@@ -1,0 +1,144 @@
+{% extends './base/base.html' %}
+<!-- head  -->
+{% block head %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">{% endblock head %}
+<script src="https://kit.fontawesome.com/3e24c91c8f.js" crossorigin="anonymous"></script>
+{% block css_path %}{{ url_for('static', filename='css/editPerfil.css') }}{% endblock css_path %}
+{% block title %}Pagina Principal{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+    <header class="header">
+
+        <img class="logo" src="/static/img/logo.png" alt="Logo" >
+        <h2>Edición de perfil</h2>
+
+        <div class="link">  
+            <a class="button" href="/fronpage"> 
+                <i class="fas fa-home"></i>
+            </a>   
+            <a class="button" href="/send" id="mensajes"> 
+                <i class="fas fa-sms"></i>
+            </a>
+            <a href="/perfil" class="button" id="perfil"><i class="fas fa-user-circle"></i></a>
+        </div> 
+
+    </header>
+
+    <div class="contenedorTodo">
+        <div class="left">
+            <form action="/editarPerfil" method="post" class="form">
+                <div class="info">
+                <input type="image" class="fotoUser" src="/static/imagenes_usuario/{{foto}}" alt="fotoUser"><br>
+                <form action="/cambiarfotoperfil" method="post" name="cambiarfotoperfil" enctype="multipart/form-data">
+                    <input type="file" name="archivo" id="archivo" class="input-file" >
+                <div class="links">
+                    <input type="submit" value="Guardar cambios">
+            
+                </div>
+                </form>
+
+                
+                    <strong>
+                        <a id="name" href="#">{{nombre}}</a>
+                        <br>
+                    </strong>
+                    <label class="user" for="Range">{{rol}} </label>
+                    <br>
+                </div>
+        </div>
+
+        <div class="right">
+                <div class="contenedorDetalles">
+                <br>
+                <label for="nombre">Nombre de usuario:</label>
+                <br>
+                <input type="text" class="nombre" name="nombre" id="nombre" value="{{nombre}}">
+                <br>
+        
+                <label for="pais">Pais:</label>
+                <br>
+
+                <input type="text" class="pais" name="pais" id="pais" value="{{pais}}">
+                <br>
+
+                <label for="fecha">Fecha de nacimiento:</label>
+
+                <br>
+                <input type="text" class="fecha" name="fecha" id="fecha" value="{{fecha}}">
+                <br>
+
+                <label for="intereses">Intereses:</label>
+                <br>
+
+                <input type="text" class="intereses" name="intereses" id="intereses" value="{{intereses}}">
+                <br>
+
+                <div class="links">
+                    <input type="submit" value="Guardar cambios">
+            
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="es">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <script src="https://kit.fontawesome.com/3e24c91c8f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/editperfil.css">
+    <link rel="icon" href="/static/img/logo.ico">
+</head>
+    
+<body>
+    <header>
+
+        <img class="logo" src="/static/img/logo.png" alt="Logo" >
+        <h1>Edición de perfil</h1>
+
+    </header>
+
+    <div class="contenedor">
+    <form action="/editarPerfil" method="post" class="form">
+        <input type="image" class="fotoUser" src="/static/img/liv tyler.jpg" alt="fotoUser">
+
+        <div class="info">
+            <strong>
+                <a id="name" href="#">{{nombre}}</a>
+                <br>
+            </strong>
+            <label class="user" for="Range">{{rol}}</label>
+            <br>
+        </div>
+        <br>
+        <label for="nombre">Nombre de usuario:</label>
+        <br>
+        <input type="text" class="nombre" name="nombre" id="nombre" value="{{nombre}}">
+        <br>
+        <label for="email">Correo electronico::</label>
+        <br>
+        <input type="email" class="email" name="email" id="email" value="{{email}}">
+        <br>
+        <label for="fecha">Fecha de nacimiento:</label>
+        <br>
+        <input type="text" class="fecha" name="fecha" id="fecha" value="{{fecha}}">
+        <br>
+        <div class="links">
+        <input type="submit" value="Guardar cambios">
+        <br>
+        <a href="/perfil">Ir a perfil</a>
+        </div>
+    </form>
+    </div>
+
+</body>
+</html>-->

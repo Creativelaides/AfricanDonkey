@@ -1,0 +1,112 @@
+body{
+    margin: 0%;
+}
+.contenido{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-size: cover;
+    height: 100vh;
+}
+.derecha{
+    background: #FFD700;
+    display: flex;
+    place-items: center;
+    text-align:center;
+    justify-content: center; 
+}
+form{
+    background-color:#FFD700;
+    width: 420px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+form input{
+    font-size: 16px;
+    margin: 1%;
+    padding: 8px;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.inputPassword input{
+  width: 393px;
+  margin-bottom: 10%;
+}
+.contenedorPassword{
+    position: relative;
+}
+/* icono ojo */
+.eye2{
+    position: relative;
+    right: -179px;
+    top: 33px;
+    cursor: pointer;
+}
+.entrar input[type="submit"]{
+    border: 1px solid #FFD700;
+    text-align:center;
+    cursor: pointer;
+    padding: 10px 45px;
+}
+.entrar input[type="submit"]:hover{
+    color: #fff;
+    background-color: #440046;
+    transition: 0.4s ease;
+}
+.entrar input[type="submit"]:focus{
+    color: rgb(2, 2, 2);
+    background-color: #fff;
+}
+.linkRecuperar a{
+    font-style: italic;
+    font-size: 14px;
+    text-decoration:none;
+    color:#0000cc;
+    cursor:pointer;
+    margin-top: 0px;
+}
+.lineaHorizontal{
+    font-size:20px;
+    margin: 0;
+}
+
+.registrarse a{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(236, 235, 235);
+    color:#440046;
+    border-radius: 15px;
+    border: none;
+    text-align:center;
+    cursor: pointer;
+    padding: 10px 28px;
+    border: 1px solid #FFD700;
+}
+.registrarse a:hover{
+    color: #fff;
+    background-color: #440046;
+    border: none;
+    transition: 0.4s ease;
+    text-decoration:none;;
+}
+
+
+#logo{
+    align-self: center;
+    width: 150px;
+}
+
+#izquierza{
+    background-image: url(/static/img/fondo4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align:center;
+
+    /*background: #f7ff00;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to top, #440046, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to top, #440046, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}

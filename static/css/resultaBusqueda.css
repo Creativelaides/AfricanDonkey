@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.logo{
+    width:30px;
+}
+header{
+    background: #FDD700;
+    width: 100%;
+}
+header h1{
+    float: right;
+}
+body{
+    background: #ebd662;
+}
+.contenedor{
+    margin-top: 18px;
+    display: relative;
+    text-align: center;
+    align-items: center;
+}
+.form label{
+    margin-top:15px;
+}
+.form input{
+    margin-top:13px;
+    margin-bottom: 10px;
+    outline: none;
+    background-color: #fff;
+    border-radius: 15px;
+}

@@ -1,0 +1,43 @@
+<!-- extends como en las clases de python pero en html -->
+{% extends './base/base.html' %}
+<!-- head  -->
+{% block head %}{% endblock head %} {% block css_path %}{{ url_for('static',
+filename='css/styleRecuContraseña2.css') }}{% endblock css_path %} {% block
+title %}Correo Activación{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+<main class="contenido">
+    <div class="izquierda">
+        <h1>AFRICAN DONKEY</h1>
+    </div>
+
+    <div class="derecha">
+        <img src="/static/img/logo.png" alt="logo" id="logo" />
+        <form action="/validaciondecuenta">
+            <h1>Correo de Activación</h1>
+
+            <p>Se envió un mensaje a tu correo electronico</p>
+
+            <b id="correo">CorreoEl*******@gmail.com</b>
+
+            <p>
+                Sigue las instrucciones del mensaje enviado para la activación
+                de tu cuenta
+            </p>
+            <input type="submit" value="Aceptar" id="Aceptar" />
+
+            <div class="ayuda">
+                <h5>¿Nescesitas ayuda?</h5>
+                <p class="soporte">
+                    Por favor, contacta al
+                    <a class="link" href="/soportetecnico"
+                        >Soporte Tecnico de African Donkey
+                    </a>
+                </p>
+            </div>
+        </form>
+    </div>
+</main>
+<script src="/static/js/scriptRegister.js"></script>
+{% endblock main_content %}

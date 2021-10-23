@@ -1,0 +1,68 @@
+{% extends './base/base.html' %}
+<!-- head  -->
+{% block head %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">{% endblock head %}
+<script src="https://kit.fontawesome.com/3e24c91c8f.js" crossorigin="anonymous"></script>
+{% block css_path %}{{ url_for('static', filename='css/styleUsuarios.css') }}{% endblock css_path %}
+{% block title %}Usuarios en la red{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+<body>
+    <header class="header">
+        <img class="logo" src="/static/img/logo.png" alt="Logo" >
+    
+        
+
+        <div class="link"> 
+            <a class="button" href="/send" id="mensajes"> <i class="fas fa-sms"></i></a>
+
+            <a href="/fronpage" class="button" id="home"><i class="fas fa-home"></i></a>
+
+        </div> 
+    
+
+        <div class="info">
+            <div>
+               <!-- <strong>
+                    <p>{{usuario}}</p>
+                     <label class="user" for="Name">Elsa Capunta</label> 
+                </strong>
+               
+            </div> -->
+            <div class="perfilImg">
+                <strong>
+                <a href='/perfil'>{{usuario}}</a>
+                <label class="user" for="Range">{{rol}}</label>
+                 </strong>
+            </div>
+            <input type="image" src="/static/imagenes_usuario/{{foto}}" alt="profile photo"  class="imageperfil" ><!--/static/img/liv tyler.jpg-->
+        </div>
+    </header>
+
+    <div class="contenedor">
+        
+     <form action="/verusuarios" method="post" name="formuver" >
+        
+        {%if data%}
+        <table>
+        <tr> <td>id  </td> <td>   nombre    </td> <td>fecha_nacimiento</td> <td>      email    </td> <td>  pais</td>
+        <td>intereses</td>  <td>rol</td> <td>estado</td> <td>opciones</td> </tr>
+        {%for k in data%}
+        
+        {%if rol=="superadministrador"%}
+        
+        <tr><td>{{k[0]}}</td> <td>{{k[1]+" "+k[2]}}</td> <td>{{k[4]}}</td> <td>{{k[5]}}</td> <td>{{k[10]}}</td>
+            <td>{{k[11]}}</td>  <td>{{k[7]}}</td> <td>{{k[14]}} </td> <td><a href="/cambiarrol/{{k.0}}/{{k.7}}">cambiar rol</a></td> <td>  o </td> <td><a href="/eliminar/{{k.0}}">eliminar usuario</a></td> <td> o </td> <td><a href="/reactivar/{{k.0}}">deshacer</a></td></tr>
+        {%else%}
+        <tr><td>{{k[0]}}</td> <td>{{k[1]+" "+k[2]}}</td> <td>{{k[4]}}</td> <td>{{k[5]}}</td> <td>{{k[10]}}</td>
+            <td>{{k[11]}}</td>  <td>{{k[7]}}</td> <td>{{k[14]}} </td>  </td> <td><a href="/eliminar/{{k.0}}">eliminar usuario</a></td> <td> o </td> <td><a href="/reactivar/{{k.0}}">deshacer</a></td></tr>
+        {%endif%}
+        {%endfor%}
+    </table>
+    
+        {%endif%}
+    </form>
+    
+    </div>
+    {% endblock main_content %}
+    

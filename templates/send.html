@@ -1,0 +1,150 @@
+
+{% extends './base/base.html' %}
+<!-- head  -->
+{% block head %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">{% endblock head %}
+<script src="https://kit.fontawesome.com/3e24c91c8f.js" crossorigin="anonymous"></script>
+{% block css_path %}{{ url_for('static', filename='css/send.css') }}{% endblock css_path %}
+{% block title %}Mensajes{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+    <header class="header">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+             <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+        <img class="logo" src="/static/img/logo.png" alt="Logo" >
+        <h1>envio de mensajes</h1> 
+        <div class="link">  
+            <a class="button" href="/fronpage"> 
+                <i class="fas fa-home"></i>
+            </a>   
+  
+        </div>
+
+        <div class="info">
+            <!-- <div>
+               <strong>
+                    <p>{{usuario}}</p>
+                     <label class="user" for="Name">Elsa Capunta</label> 
+                </strong>
+               
+            </div> -->
+            <div class="perfilImg">
+                <strong>
+                <a href='/perfil'>{{usuario}} </a><br>
+                <label class="user" for="Range">{{rol}}</label>
+                 </strong>
+            </div>
+        </div>
+        <input type="image" src="/static/imagenes_usuario/{{foto}}" alt="profile photo"  class="image" ><!--/static/img/liv tyler.jpg-->
+        <!-- insertar palabra clave de la busqueda -->
+        
+    </header>
+
+    <div class="contenedor">
+        <div class="left">
+            <h2>Mis mensajes</h2>
+            <div class="contenedorMensajes">
+                <form action="" class="formMensajes">
+                    
+                    {%if solicitudes%}
+
+        <table>
+        <tr> <td>Solicitudes de Amistad</td> </tr>
+        {%for k in solicitudes%}
+        <form  action=" " method="post" name="formusolicitudes" >
+        <tr><td> {{k[1]}} </td><td>({{k[2]}})</td> <td>te ha enviado una solicitud de amistad</td></tr>
+        <tr><td><a href="/confirmarsolicitud/{{k[0]}}">ACEPTAR</a> </td> <td><a href="/rechazarsolicitud/{{k[0]}}">RECHAZAR</a></td> </tr>
+        </form>
+        {%endfor%}
+        </table>
+        {%else%}
+            No tienes solicitudes de amistad
+        <hr>
+        {%endif%}
+    
+    
+        {%if enviados%}
+        <hr>
+        <table>
+        <tr> <td>Mensajes Enviados</td> </tr>
+        {%for k in enviados%}
+        <form  action=" " method="post" name="formumensajesenviados" >
+        <tr><td> Enviado a: </td><td>{{k[2]}}</td> </tr>
+        <tr><td> Asunto: </td><td>{{k[0]}}</td> </tr>
+        <tr><td> Mensaje: </td><td>{{k[1]}}</td> </tr>
+        <tr><td><a href="">ENVIAR MENSAJE</a> </td> <td><a href="">ELIMINAR MENSAJE</a></td> </tr>
+        </form>
+        {%endfor%}
+        </table>
+        {%else%}
+            No has enviado mensajes
+        <hr>
+        {%endif%}
+
+        {%if recibidos%}
+        <hr>
+        <table>
+        <tr> <td>Mensajes Recibidos</td> </tr>
+        {%for k in recibidos%}
+        <form  action=" " method="post" name="formumensajesrecibidos" >
+        <tr><td> Enviado por: </td><td>{{k[2]}}</td> </tr>
+        <tr><td> Asunto: </td><td>{{k[0]}}</td> </tr>
+        <tr><td> Mensaje: </td><td>{{k[1]}}</td> </tr>
+        <tr><td><a href="">RESPONDER MENSAJE</a> </td> <td><a href="">ELIMINAR MENSAJE</a></td> </tr>
+        </form>
+        {%endfor%}
+        </table>
+        {%else%}
+            No has recibido mensajes
+        <hr>
+        
+        {%endif%}
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="right">
+            <h2>Enviar mensajes</h2>
+    
+                <div class="contenedorEnviarMensajes">
+                    <form action="/send" method="post" class="formEnviar" name="formsend">
+                            
+                            <div class="asunto">
+                                <input type="text" name="asunto" id="asunto" placeholder="Asunto" value="">
+                            </div>
+    
+                            <div class="emailMensaje">
+                                <input type="email" name="email" id="email" placeholder="Correo Electronico">
+                                
+                            </div>
+                            <div class = "mensaje">
+                                <textarea name="mensaje" id="" cols="40" rows="10" placeholder="Mensaje"></textarea>
+                            </div>
+    
+                            <input type="submit" value="Enviar mensaje" id="enviar" class="enviar">
+                        </div>
+                    
+                    </form>
+                </div>
+        </div>
+    </div>
+
+    {% endblock main_content %}
+
+
+        <a href='/fronpage'>Ir a inicio</a>
+    
+    </div>
+
+</body>
+</html>

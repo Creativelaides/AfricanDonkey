@@ -1,0 +1,43 @@
+<!-- extends como en las clases de python pero en html --> 
+{% extends './base/base.html' %}
+
+<!-- head  -->
+{% block head %}<script src="{{ url_for('static', filename='js/contraseña.js') }}"></script>{% endblock head %}
+{% block css_path %}{{ url_for('static', filename='css/styleContraseñaOk.css') }}{% endblock css_path %}
+{% block title %}Cambio Contraseña{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+      <main class="contenido">
+
+        <div class="izquierda">
+          <h1>AFRICAN DONKEY</h1>
+        </div>
+        
+        <div class="derecha">
+          
+            <form action="/contraseñaok" method="post" name="formlogin" onsubmit="validar_formulario();"> 
+              <img src="/static/img/logo.png" alt="logo" class="logo">
+              <h1>Hola <b>"Usuario" </b></h1>
+              <p id="enunciado">Escribe tu nueva contraseña a continuación.</p>
+
+                <input type="password" name="password" class="password" id="password" placeholder="Nueva contraseña" required>
+
+                <input type="password" name="vePassword" class="vePassword" id="vePassword" placeholder="Confirma tu contraseña" required>
+
+                <input type="submit" value="Guardar cambios" id="enviar">
+
+                <div class="ayuda">
+                  <h5 >¿Nescesitas ayuda?</h5>
+                  <p class="soporte">Por favor, contacta al <a class="link" href="soportetecnico.html">Soporte Tecnico de African Donkey </a></p>
+              </div>
+                <div>
+                  <img src="/static/img/eye.png" alt="icono2" class="ojo2" onmouseover="mostrarPassword();"  onmouseout="ocultarPassword();">
+                </div>
+            </form>
+
+        </div>
+
+      </main>
+{% endblock main_content %}
+

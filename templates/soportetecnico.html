@@ -1,0 +1,39 @@
+<!-- extends como en las clases de python pero en html --> 
+{% extends './base/base.html' %}
+<!-- head  -->
+{% block head %}{% endblock head %}
+{% block css_path %}{{ url_for('static', filename='css/soporteTecnico.css') }}{% endblock css_path %}
+{% block title %}Activar cuenta{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+      <main class="contenido">
+
+        <div class="izquierda">
+          <h1>AFRICAN DONKEY</h1>
+        </div>
+
+        <div class="derecha">
+            <img class="logo" src="/static/img/logo.png" alt="logo" id="logo">
+            <form action="/soportetecnico"  method="post" name="formRegistro" class="form"  onsubmit="validar_formulario();" >
+                <h1>Soporte tecnico</h1>
+                <input type="email" name="email" id="email" placeholder="Escribe tu correo electronico" value=" ">
+                <p class="enunciado">Escribe tu queja, inquietud o reclamo. </p>
+
+                  <div class="texAreaMensaje">
+                  <textarea name="mensaje" id="mensaje" value=" " cols="30" rows="10" placeholder="Escribe aquí tus comentarios"></textarea>
+                </div>
+
+                  <input type="submit" value="Enviar" class="enviar" id="enviar">     
+                 <hr class="horizontal">
+
+                <div class="iniciar_sesion">
+                    <a href="/login">Iniciar Sesión</a >
+                    <a href="/perfil">Ir a perfil</a>
+                </div>
+            </div>
+
+            </form>
+      </main>
+      <script src="/static/js/soporteTecnico.js"></script>
+{% endblock main_content %}

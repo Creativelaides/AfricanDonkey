@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.contenido{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-size: cover;
+    height: 100vh;
+}
+/* background de la derecha */
+.derecha{
+    background: #FFD700;
+    display: flex;
+    /* place-items: center; */
+    text-align:center;
+    justify-content: center; 
+}
+.form {
+    margin-top: 80px;
+    width: 100%;
+    margin: 60px;
+    font-size: 13px;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+.form input{
+    width:400px;
+    margin: 8px;
+    padding:8px;
+    font-size: 13px;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+.inputTexts input{
+    width:150px; 
+}
+.inputEmail input{
+    width:250px
+}
+.fecha input{
+    width:150px;
+}
+
+.inputPassword input{
+    width:190px;
+    padding:8px 1px 8px 10px;
+}
+.inputPaisIntereses input{
+    width:185px;
+    margin-right:-2px;
+    margin-left:17px;
+}
+.confiPoliticas input{
+    position: static;
+    margin-top: 4px;
+    margin-bottom: 60px;
+    padding: 0%;
+
+}
+
+/* boton para ir a registrarse */
+.registrar input[type="submit"]{
+    border: 1px solid #FFD700;
+    text-align:center;
+    cursor: pointer;
+    padding: 10px 110px;
+    position: relative;
+    top: -50px;
+    margin-bottom: 20px;
+}
+.registrar input[type="submit"]:hover{
+    color: #fff;
+    background-color: #440046;
+    transition: 0.4s ease;
+}
+/* link de restablesimiento de clave */
+/* Boton Iniciar sesion */
+.iniciar_sesion a{
+    color: rgb(4, 82, 252);
+    position: static;
+    margin-top: 10px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+.iniciar_sesion  a:hover{
+    border: none;
+    transition: 0.4s ease;
+    text-decoration:none;
+
+}
+
+.iniciar_sesion a:focus{
+    color:black;
+    background-color: #fff;
+    transition: 0.4s ease;
+}
+p{
+    font-size: 12px;
+    position: relative;
+    top: -70px;
+}
+.contenedorPassword{
+    position: relative;
+}
+/* icono ojo */
+.eye{
+    position: relative;
+    right: -200px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+/* .eye1{
+    position: relative;
+    right: -200px;
+    transform: translateY(-50%);
+    cursor: pointer;
+} */
+
+/* logo */
+.logo{
+    align-self: center;
+    margin-top:20px;
+    width: 100px;
+
+}
+/* contenido izquierza */
+.izquierza{
+    background-image: url(/static/img/fondo4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align:center;
+
+    /*background: #f7ff00;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to top, #440046, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to top, #440046, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}

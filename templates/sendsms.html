@@ -1,0 +1,86 @@
+
+{% extends './base/base.html' %}
+<!-- head  -->
+{% block head %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">{% endblock head %}
+<script src="https://kit.fontawesome.com/3e24c91c8f.js" crossorigin="anonymous"></script>
+{% block css_path %}{{ url_for('static', filename='css/send.css') }}{% endblock css_path %}
+{% block title %}Mensajes{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+    <header class="header">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+             <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+        <img class="logo" src="/static/img/logo.png" alt="Logo" >
+        <h1>envio de mensajes a amigos</h1> 
+        <div class="link">  
+            <a class="button" href="/fronpage"> 
+                <i class="fas fa-home"></i>
+            </a>   
+  
+        </div>
+
+        <div class="info">
+            
+            <div class="perfilImg">
+                <strong>
+                <a href='/perfil'>{{usuario}} </a><br>
+                <label class="user" for="Range">{{rol}}</label>
+                 </strong>
+            </div>
+        </div>
+        <input type="image" src="/static/imagenes_usuario/{{foto}}" alt="profile photo"  class="image" ><!--/static/img/liv tyler.jpg-->
+        <!-- insertar palabra clave de la busqueda -->
+        
+    </header>
+
+    <div class="contenedor">
+        <div class="left">
+            
+
+        </div>
+
+        <div class="right">
+            <h2>Enviar mensajes</h2>
+    
+                <div class="contenedorEnviarMensajes">
+                    <form action="/sendsms/{{email}}" method="post" class="formEnviar" name="formsendms">
+                        <div class="emailMensaje">
+                            <input type="email" name="email" value={{email}} id="email" placeholder="Correo Electronico" readonly>
+                            
+                        </div>
+                            <div class="asunto">
+                                <input type="text" name="asunto" id="asunto" placeholder="Asunto" value="">
+                            </div>
+    
+                            
+                            <div class = "mensaje">
+                                <textarea name="mensaje" id="" cols="40" rows="10" placeholder="Mensaje"></textarea>
+                            </div>
+    
+                            <input type="submit" value="Enviar mensaje" id="enviar" class="enviar">
+                        </div>
+                    
+                    </form>
+                </div>
+        </div>
+    </div>
+
+    {% endblock main_content %}
+
+
+        <a href='/fronpage'>Ir a inicio</a>
+    
+    </div>
+
+</body>
+</html>
+

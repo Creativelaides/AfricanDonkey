@@ -1,0 +1,120 @@
+*{
+    margin: 0%;
+    padding: 0;
+}
+
+.header{
+    background: rgb(247,217,0);
+    background: radial-gradient(circle, rgba(247,217,0,1) 0%, rgba(179,161,14,1) 41%, rgba(123,89,28,1) 100%, rgba(255,40,0,1) 100%);
+    display: flex;
+    place-items: center;
+    text-align:center;
+    height: 60px;
+
+    /* justify-content: center;  */
+}
+
+.header h2{
+    position: relative;
+    left: 500px;
+}
+
+.logo{
+    width:45px;
+}
+.button {
+    background: #ffffff;
+    color: #440046;
+    display: inline-block;
+    position: relative;
+    left: 990px;
+    box-shadow: 0px 3px 3px #000000 ;
+    text-decoration: none;
+    border-radius: 25px;
+    width: 38px;
+    padding: 10px 2px;    
+}
+
+.button:hover {
+    color: #fff;
+    background: #440046;
+}
+
+
+.contenedorTodo{    
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    height: 91vh;
+
+}
+.left{
+    background: rgb(255,224,0);
+background: linear-gradient(180deg, rgba(255,224,0,1) 5%, rgba(155,136,0,1) 100%);
+
+}
+.form{
+    text-align: center;
+    position: relative;
+    top: 150px;
+    left: 180px;
+}
+
+.form input[type="image"]{
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+    width: 280px;
+    position: relative;
+    padding: 8px;
+    font-weight: 500;
+}
+
+.info a{
+    text-decoration: none;
+    color: #000000;
+    font-style: italic;
+}
+
+.right{
+    background: rgb(255,224,0);
+background: linear-gradient(180deg, rgba(255,224,0,1) 5%, rgba(155,136,0,1) 100%);
+}
+
+.contenedorDetalles{
+    width: 250px;
+    border-radius: 20px;
+    background: rgb(253, 253, 253);
+    margin-left: 15px;
+    position: relative;
+    top: 21%;
+}
+.contenedorDetalles input{
+    width: 210px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background: rgb(219, 219, 219);
+    border-radius: 15px;
+    outline: none;
+    border:none ;
+    padding: 5px
+}
+
+.contenedorDetalles label{
+    font-style: italic;
+    font-weight:500;
+    margin-left: 10px;
+}
+
+.links input{
+    width: 150px;
+    position: relative;
+    left: 35px;
+    cursor: pointer;
+}
+.links input:hover{
+    color: #fff;
+    background: #440046;
+
+}

@@ -1,0 +1,93 @@
+{% extends './base/base.html' %}
+<!-- head  -->
+{% block head %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">{% endblock head %}
+<script src="https://kit.fontawesome.com/3e24c91c8f.js" crossorigin="anonymous"></script>
+{% block css_path %}{{ url_for('static', filename='css/styleResultados.css') }}{% endblock css_path %}
+{% block title %}Resultados de busqueda{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+    
+<body>
+    <header class="header">
+
+        <form action="/resultadobusqueda" method="post" name="formbusqueda">
+
+            <div class="inputBuscar">
+                <input  type="text" id="search" name="search" placeholder="Buscar personas...">
+                <!-- <label for="buscar"><i class="fas fa-search"></i>buscar</label> -->
+                <input type="submit" value="Buscar" id="buscar">
+            </div>
+
+        </form>
+
+        <div class="link">    
+            
+            <a class="button" href="/send" id="mensajes"> <i class="fas fa-sms"></i></a>
+
+            <a href="/fronpage" class="button" id="home"><i class="fas fa-home"></i></a>
+
+        </div> 
+        <div class="info">
+            <div>
+               <!-- <strong>
+                    <p>{{usuario}}</p>
+                     <label class="user" for="Name">Elsa Capunta</label> 
+                </strong>
+               
+            </div> -->
+            <div class="perfilImg">
+                <strong>
+                <a href='/perfil'>{{usuario}}Elsa Capunta</a>
+                <label class="user" for="Range">{{rol}}Administrador</label>
+                 </strong>
+            </div>
+            <input type="image" src="/static/img/liv tyler.jpg" alt="profile photo"  class="image" ><!--/static/img/liv tyler.jpg-->
+        </div>
+        
+    </header>
+
+    <div class="contenedor">
+        <div class="contenedorResultados">
+            <div class="left">
+                <input type="image" class="Fotousuarios" src="/static/img/liv tyler.jpg" alt="fotoUser">
+            </div>
+            <div class="right">
+            <div class="info">
+                <strong>
+                    <p id="name" href="#">{{session['nombre']}}</p>
+                    <br>
+                </strong>
+            
+            </div>
+        {% if data1 %}
+          
+        {%for k in data1%}
+        <form action="/solicitudamistad/{{k.0}}" method="post" class="form">
+        <tr>
+        <td> {{k.1+" "+k.2}}</td>
+        <!--agregar una fotito de perfil-->
+        <td> ¨
+            
+            <input class ="solicitud" type="submit" name="agregaramigo" value="enviar solicitud de amistad">
+        </td>
+        </tr>
+        <br>
+        </form>
+        {%endfor%}
+        {%else%}
+        <strong>
+            No hay coincidencias
+        </strong>
+
+        {% endif %}
+       
+       <!-- crear una lista de coincidencias del nombre clave. -->
+        <!-- recorrer la lista -->
+        <!-- para cada resultado crear un input de solo lectura con nombre e imagen -->
+        <!-- <input type="submit" value="Enviar solicitud"> -->
+
+    
+    </div>
+    </div>
+{% endblock main_content %}

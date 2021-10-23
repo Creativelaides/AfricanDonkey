@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+        
+        {%if solicitudes%}
+
+        <table>
+        <tr> <td>Solicitudes de Amistad</td> </tr>
+        {%for k in solicitudes%}
+        <form  action=" " method="post" name="formusolicitudes" >
+        <tr><td> {{k[1]}} </td><td>({{k[2]}})</td> <td>te ha enviado una solicitud de amistad</td></tr>
+        <tr><td><a href="/confirmarsolicitud/{{k[0]}}">ACEPTAR</a> </td> <td><a href="/rechazarsolicitud/{{k[0]}}">RECHAZAR</a></td> </tr>
+        </form>
+        {%endfor%}
+        </table>
+        {%else%}
+            No tienes solicitudes de amistad
+        <hr>
+        {%endif%}
+    
+    
+        {%if enviados%}
+        <hr>
+        <table>
+        <tr> <td>Mensajes Enviados</td> </tr>
+        {%for k in enviados%}
+        <form  action=" " method="post" name="formumensajesenviados" >
+        <tr><td> Enviado a: </td><td>{{k[2]}}</td> </tr>
+        <tr><td> Asunto: </td><td>{{k[0]}}</td> </tr>
+        <tr><td> Mensaje: </td><td>{{k[1]}}</td> </tr>
+        <tr><td><a href="">ENVIAR MENSAJE</a> </td> <td><a href="">ELIMINAR MENSAJE</a></td> </tr>
+        </form>
+        {%endfor%}
+        </table>
+        {%else%}
+            No has enviado mensajes
+        <hr>
+        {%endif%}
+
+        {%if recibidos%}
+        <hr>
+        <table>
+        <tr> <td>Mensajes Recibidos</td> </tr>
+        {%for k in recibidos%}
+        <form  action=" " method="post" name="formumensajesrecibidos" >
+        <tr><td> Enviado por: </td><td>{{k[2]}}</td> </tr>
+        <tr><td> Asunto: </td><td>{{k[0]}}</td> </tr>
+        <tr><td> Mensaje: </td><td>{{k[1]}}</td> </tr>
+        <tr><td><a href="">RESPONDER MENSAJE</a> </td> <td><a href="">ELIMINAR MENSAJE</a></td> </tr>
+        </form>
+        {%endfor%}
+        </table>
+        {%else%}
+            No has recibido mensajes
+        <hr>
+        
+        {%endif%}
+    
+</body>
+</html>

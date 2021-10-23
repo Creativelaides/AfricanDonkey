@@ -1,0 +1,129 @@
+body{
+    margin: 0%;
+}
+.contenido{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-size: cover;
+    height: 100vh;
+}
+.derecha{
+    background: #ffd700;
+    display: flex;
+    place-items: center;
+    text-align:center;
+    justify-content: center;
+    flex-direction: column;
+}
+form input{
+    width:400px;
+    padding: 8px;
+    font-size: 13px;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+.texAreaMensaje textarea{
+    border: 1px solid #fff;
+    border-radius: 15px;
+    width: 100%;
+    outline: none;
+    margin-bottom: 20px;
+
+}
+form input[type="submit"]{
+    font-size: 13px;
+    width: 220px;
+    background-color: rgb(230, 223, 223);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #FFD700;
+    margin: 0%;
+}
+form input[type="submit"]:hover{
+    color: #fff;
+    background-color: #440046;
+    border: none;
+    transition: 0.4s ease;
+
+}
+form input[type="submit"]:focus{
+    color: rgb(3, 3, 3);
+    background-color: #fff;
+    border: none;
+    transition: 0.4s ease;
+}
+
+.horizontal{
+    margin: 5%;
+}
+.iniciar_sesion a{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(236, 235, 235);
+    color:#440046;
+    border-radius: 15px;
+    border: none;
+    text-align:center;
+    position: relative;
+    top: 05px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #FFD700;
+}
+.iniciar_sesion  a:hover{
+    color: #fff;
+    background-color: #440046;
+    border: none;
+    transition: 0.4s ease;
+    text-decoration:none;
+
+}
+.num{
+    position: relative;
+    top: -10px;
+}
+.correoEl{
+    position: relative;
+    top: -10px;
+    left: 32px;
+}
+.wap{
+    position: relative;
+    width: 30px;
+    left: -50px;
+}
+.correo{
+    position: relative;
+    width: 30px;
+    left: -15px;
+}
+.iniciar_sesion a:focus{
+    color:black;
+    background-color: #fff;
+    transition: 0.4s ease;
+}
+.logo{
+    align-self: center;
+    width: 120px;
+}
+.enunciado{
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+hr {
+    margin: 50px;
+    height: 2px;
+    border: none;
+    background-color: black;
+  }
+
+.izquierda{
+    background-image: url(/static/img/fondo4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align:center;
+}

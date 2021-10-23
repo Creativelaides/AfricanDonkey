@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/styleNuevaContraseña.css">
+    <link rel="icon" href="/static/img/logo.png" type="image/png">
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Cambio Contraseña</title>
+  </head>
+  <body>
+      <main class="contenido">
+
+        <div class="izquierda">
+          <h1>AFRICAN DONKEY</h1>
+        </div>
+        
+        <div class="derecha">
+          
+            <form action="/nuevacontraseña" method="post" name="formcambiarcontraseña" onsubmit="validar_formulario();"> 
+              <img src="/static/img/logo.png" alt="logo" class="logo">
+              <h1>Hola <b>"Usuario" </b></h1>
+              <p id="enunciado">Escribe tu nueva contraseña a continuación.</p>
+
+              <div class="contenedorPassword">
+                <div class="inputPassword">
+                    
+                    <input type="password" name="password" id="password" placeholder="Contraseña">   
+                    <span class="eye1">
+                        <i class="fas fa-eye-slash"></i>
+                    </span>
+                    <input type="password" name="vepassword" id="vepassword" placeholder="Confirma tu contraseña">
+        
+                </div>
+            </div>
+
+                <input type="submit" value="Guardar cambios" id="enviar">
+              <br>
+              <a href="/perfil">Ir a perfil</a>
+
+                <div class="ayuda">
+                  <h5 >¿Nescesitas ayuda?</h5>
+                  <p class="soporte">Por favor, contacta al <a class="link" href="/soportetecnico">Soporte Tecnico de African Donkey </a></p>
+              </div>
+
+            </form>
+            
+        </div>
+      </main>
+      <script src="/static/js/cotraseña.js"></script>
+  </body>
+</html>

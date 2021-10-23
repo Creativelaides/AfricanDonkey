@@ -1,0 +1,75 @@
+body{
+    margin: 0%;
+}
+.contenido{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-size: cover;
+    height: 100vh;
+}
+.derecha{
+    background: #ffd700;
+    display: flex;
+    place-items: center;
+    text-align:center;
+    justify-content: center;
+    flex-direction: column;
+}
+form{
+    background-color:#ffd700;
+    width: 420px; 
+}
+input{
+    margin: 5px;
+    padding:10px 40px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 20px;
+    border: 1px solid #FFD700;
+    text-align:center;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    color: #fff;
+    background-color: #440046;
+    transition: 0.4s ease;
+}
+input[type="submit"]:first{
+    color: black;
+    background-color: #fff;
+}
+#logo{
+    align-self: center;
+    width: 190px;
+}
+
+
+#correo{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ayuda{
+    margin-top: 150px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.soporte{
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.link{
+    font-style: italic
+}
+.link:hover{
+    text-decoration:none;
+  color:#0000cc;
+  cursor:pointer;
+}
+
+.izquierda{
+    background-image: url(/static/img/fondo4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align:center;
+}

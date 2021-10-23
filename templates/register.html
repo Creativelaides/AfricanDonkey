@@ -1,0 +1,77 @@
+<!-- extends como en las clases de python pero en html --> 
+{% extends './base/base.html' %}
+<!-- head  -->
+{% block head %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">{% endblock head %}
+{% block css_path %}{{ url_for('static', filename='css/styleRegistro.css') }}{% endblock css_path %}
+{% block title %}Registro{% endblock title %}
+
+<!-- body  -->
+{% block main_content %}
+    
+    <main class="contenido">
+        <div class="izquierza">
+            <h1>AFRICAN DONKEY</h1>
+        </div>
+        <div class="derecha">
+
+            <form action="/registro"  method="post" name="formRegistro" class="form"  onsubmit="return validar_formulario();" >         
+                <img src="/static/img/logo.png" alt="logo" class="logo">
+
+                    <div class="inputTexts">
+                        <input type="text" name="Nombres" id="nombres" placeholder="Nombres">
+                        <input type="text" name="Apellidos" id="apellidos" placeholder="Apellidos">
+                    </div>
+
+                    <div class="inputEmail">
+                        <input type="email" name="email" id="email" placeholder="Correo electronico">
+                    </div>
+
+                    <div class="fecha">
+                        <input type="date" 
+                        placeholder="Fecha de cumpleaños"
+                        min="1960-01-01" max="2021-01-01" name="fecha_Nacimiento" id="fecha" >
+                    </div>
+
+                    <div class="inputPaisIntereses">
+                        <input type="text" name="pais" id="pais" placeholder="Pais">
+
+                        <input type="text" name="intereses" id="intereses" placeholder="Intereses: Futbol, Gamer, etc.">
+                    </div>
+
+
+                
+                    <div class="contenedorPassword">
+                        <div class="inputPassword">
+                            <span class="eye">
+                                <i class="fas fa-eye-slash"></i>
+                            </span>
+                            <input type="password" name="password" id="password" placeholder="Contraseña">
+                            <!-- <span class="eye1">
+                                <i class="fas fa-eye-slash"></i>
+                            </span> -->
+                            <input type="password" name="vepassword" id="vepassword" placeholder="Confirma tu contraseña">
+                
+                        </div>
+                    </div>
+                    <div class="confiPoliticas">
+                        <label for="confirmacionPoliticas">Acepto las politicas de privacidad</label>
+                        <input class="confirmacionPoliticas" 
+                            name="confirmacionPoliticas"type="checkbox"  value="first_checkbox"  >
+                    </div>
+                <div class="registrar">
+                    <input type="submit" value="Registrar Ahora" id="registrar">
+                </div>
+
+          
+                <div class="iniciar_sesion">
+                    <p>Si ya tiene una cuenta preciona <a href="/login">ingresar</a ></p>
+                
+                </div>
+            </form>
+            
+        </div>
+        
+    </main>
+
+    <script src="/static/js/scriptRegister.js"></script>
+{% endblock main_content %}
